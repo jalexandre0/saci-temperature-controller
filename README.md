@@ -1,6 +1,6 @@
 # SACI Temperature Controller
 
-SACI (Seu Amigo Cervejeiro Inteligente or Your Smart Brew Buddy in a quick translation) is a NODEMCUv2 (ESP8266 12-E)
+SACI (Seu Amigo Cervejeiro Inteligente or Your Smart Brew Buddy in a quick translation) is a NODEMCU 1.0 (ESP8266 12-E)
 temperature controller for homebrewing and beer fermentation.
 
 SACI was built using inexpensive parts available in any eletronic store (see the BoM and schematics bellow)
@@ -54,7 +54,7 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 ![Image of wiring diagram](http://drive.google.com/uc?export=view&id=0B24GFOLAe1WGemEtNUNNVUNDblk)
 
 ### Bill Of Materials
-- 1x nodeMCU v2
+- 1x nodeMCU 1.0
 - 2x 15 pin female header (single row)
 - 2x BC546 NPN Transistors or equivalent
 - 2x 1n4148 Zenner Diode  or equivalent
@@ -95,7 +95,7 @@ lib_deps =
   NTPClient
 ```
 - Create your 'src/config.h' file (use 'src/config.sample.h' as example)
-- Build and deploy and make beer!! PlatformIO will handle any dependencies for you
+- Build, deploy and make beer!! PlatformIO will handle any dependencies for you
 
 ### Arduino IDE
 - Install ESP8266 support as described [here](https://github.com/esp8266/Arduino)
@@ -110,7 +110,7 @@ lib_deps =
 - Select Flash Size 4M (3M SPIFFS)
 - Select Upload speed 115200
 - Build the software
-- Deploy using usb port or OTA
+- Deploy firmware and filesystem using OTA ou USB port
 
 ### CLI
 Need to be done. Any help will be appreciate.
