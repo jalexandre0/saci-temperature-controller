@@ -69,9 +69,9 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 
 # Software Build Instructions
 ### Dependencies
-- OneWire []()
-- DallasTemperature []()
-- NtpClient []()
+- [OneWire](https://github.com/PaulStoffregen/OneWire)
+- [DallasTemperature](https://github.com/milesburton/Arduino-Temperature-Control-Library)
+- [NtpClient](https://github.com/arduino-libraries/NTPClient)
 
 ### PlatformIO
 - Clone this repository
