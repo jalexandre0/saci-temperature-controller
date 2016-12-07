@@ -69,9 +69,9 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 
 # Software Build Instructions
 ### Dependencies
-- OneWire (link)
-- DallasTemperature (link)
-- NtpClient (link)
+- OneWire []()
+- DallasTemperature []()
+- NtpClient []()
 
 ### PlatformIO
 - Clone this repository
@@ -98,11 +98,19 @@ lib_deps =
 - Build and deploy and make beer!! PlatformIO will handle any dependencies for you
 
 ### Arduino IDE
-- Clone or download the project
-- Install ESP8266 Arduino framwork (link?)
-- Install the dependencies using arduino library manager
-- Inside src folder, rename the main.cpp to src.ino and open it.
-- Build and deploy using COM Port or OTA.
+- Install ESP8266 support as described [here](https://github.com/esp8266/Arduino)
+- Install the dependencies using Arduino Library Manager or download and by yourself
+- Rename 'saci-temperature-controller/src/main.cpp' to 'src.ino'
+- Copy all h and cpp files from plugins folder to src folder
+- Open src.ino file
+- Create and edit config.h file (use config.sample.h as example)
+- Edit all paths on cpp and h plugin files (boring, i know...)
+- Select NodeMCU 1.0 as board
+- Select 160Mhz CPU Frequency
+- Select Flash Size 4M (3M SPIFFS)
+- Select Upload speed 115200
+- Build the software
+- Deploy using usb port or OTA
 
 ### CLI
 Need to be done. Any help will be appreciate.
