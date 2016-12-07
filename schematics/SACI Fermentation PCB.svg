@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="210mm" height="297mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:svg="http://www.w3.org/2000/svg"
+ baseProfile="tiny">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:black;stroke-width:50.8}
+    .str0 {stroke:black;stroke-width:17.64}
+    .str2 {stroke:black;stroke-width:121.92;stroke-linecap:round}
+    .str3 {stroke:black;stroke-width:60.96;stroke-linecap:round}
+    .fil1 {fill:none}
+    .fil0 {fill:black;fill-opacity:0.501961}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_3057278942512" partID="57360">
+   <g id="board">
+    <g>
+     <polygon id="boardoutline" class="fil0" points="6783,17745 13963,17745 13963,11765 6783,11765 "/>
+     <polygon id="1" class="fil1 str0" points="6783,17745 13963,17745 13963,11765 6783,11765 "/>
+    </g>
+   </g>
+  </g>
+  <g partID="854278450">
+   <g id="_3057278940752">
+    <g>
+     <g id="copper0">
+      <circle id="connector0pin" class="fil1 str1" transform="matrix(0 1 -1 0 10430 14434.4)" r="70"/>
+      <circle id="connector1pin" class="fil1 str1" transform="matrix(0 1 -1 0 10430 14688.4)" r="70"/>
+      <circle id="connector2pin" class="fil1 str1" transform="matrix(0 1 -1 0 10430 14942.4)" r="70"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854278480">
+   <g id="_3057278941296">
+    <g>
+     <g id="copper0_0">
+      <circle id="connector0pin_1" class="fil1 str1" transform="matrix(0 -1 1 0 10412.2 15920.3)" r="70"/>
+      <circle id="connector1pin_2" class="fil1 str1" transform="matrix(0 -1 1 0 10412.2 15666.3)" r="70"/>
+      <circle id="connector2pin_3" class="fil1 str1" transform="matrix(0 -1 1 0 10412.2 15412.3)" r="70"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854279360">
+   <g id="_3057278938928">
+    <g>
+     <g id="copper0_4">
+      <rect class="fil1 str1" transform="matrix(0 1 -1 0 10744.9 13045)" width="157" height="157"/>
+      <circle id="connector0pin_5" class="fil1 str1" transform="matrix(0 1 -1 0 10666.2 13126.3)" r="79"/>
+      <circle id="connector1pin_6" class="fil1 str1" transform="matrix(0 1 -1 0 10666.2 13883.2)" r="79"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854279330">
+   <g id="_3057278935856">
+    <g>
+     <g id="copper0_7">
+      <rect class="fil1 str1" x="11860" y="16096" width="157" height="157"/>
+      <circle id="connector0pin_8" class="fil1 str1" cx="11936" cy="16174" r="79"/>
+      <circle id="connector1pin_9" class="fil1 str1" cx="11179" cy="16174" r="79"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854279780">
+   <g id="_3057278887856">
+    <g>
+     <g id="copper0_10">
+      <rect id="_45344440" class="fil1 str1" transform="matrix(0 -1 1 0 10983.4 15316.1)" width="140" height="140"/>
+      <circle id="_45294224" class="fil1 str1" transform="matrix(0 -1 1 0 11053.2 15246.3)" r="70"/>
+      <circle id="_45294120" class="fil1 str1" transform="matrix(0 -1 1 0 11174.5 15852)" r="70"/>
+      <circle id="_45293768" class="fil1 str1" transform="matrix(0 -1 1 0 12451.5 15855)" r="70"/>
+      <circle id="_45291120" class="fil1 str1" transform="matrix(0 -1 1 0 12449.4 14645.5)" r="70"/>
+      <circle id="_45267704" class="fil1 str1" transform="matrix(0 -1 1 0 11175.4 14646.8)" r="70"/>
+      <rect id="connector3" class="fil1" transform="matrix(0 -1 1 0 12376.9 15921.6)" width="141" height="141"/>
+      <rect id="connector4" class="fil1" transform="matrix(0 -1 1 0 12376.9 14720.8)" width="141" height="141"/>
+      <rect id="connector0" class="fil1" transform="matrix(0 -1 1 0 11103.6 14720.8)" width="141" height="141"/>
+      <rect id="connector1" class="fil1" transform="matrix(0 -1 1 0 11103.6 15921.6)" width="141" height="141"/>
+      <rect id="connector2" class="fil1" transform="matrix(0 -1 1 0 10986.2 15324.4)" width="141" height="141"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854279730">
+   <g id="_3057278882896">
+    <g>
+     <g id="copper0_11">
+      <rect id="_45344440_12" class="fil1 str1" transform="matrix(0 -1 1 0 10983.4 13792.1)" width="140" height="140"/>
+      <circle id="_45294224_13" class="fil1 str1" transform="matrix(0 -1 1 0 11053.2 13722.3)" r="70"/>
+      <circle id="_45294120_14" class="fil1 str1" transform="matrix(0 -1 1 0 11174.5 14328)" r="70"/>
+      <circle id="_45293768_15" class="fil1 str1" transform="matrix(0 -1 1 0 12451.5 14331)" r="70"/>
+      <circle id="_45291120_16" class="fil1 str1" transform="matrix(0 -1 1 0 12449.4 13121.5)" r="70"/>
+      <circle id="_45267704_17" class="fil1 str1" transform="matrix(0 -1 1 0 11175.4 13122.8)" r="70"/>
+      <rect id="connector3_18" class="fil1" transform="matrix(0 -1 1 0 12376.9 14397.6)" width="141" height="141"/>
+      <rect id="connector4_19" class="fil1" transform="matrix(0 -1 1 0 12376.9 13196.8)" width="141" height="141"/>
+      <rect id="connector0_20" class="fil1" transform="matrix(0 -1 1 0 11103.6 13196.8)" width="141" height="141"/>
+      <rect id="connector1_21" class="fil1" transform="matrix(0 -1 1 0 11103.6 14397.6)" width="141" height="141"/>
+      <rect id="connector2_22" class="fil1" transform="matrix(0 -1 1 0 10986.2 13800.4)" width="141" height="141"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854288480">
+   <g id="_3057278879728">
+    <g id="copper0_23">
+     <circle id="connector0pin_24" class="fil1 str1" cx="7110" cy="12872" r="74"/>
+     <circle id="connector1pin_25" class="fil1 str1" cx="7110" cy="13126" r="74"/>
+     <circle id="connector2pin_26" class="fil1 str1" cx="7110" cy="13380" r="74"/>
+     <circle id="connector3pin" class="fil1 str1" cx="7110" cy="13634" r="74"/>
+     <circle id="connector4pin" class="fil1 str1" cx="7110" cy="13888" r="74"/>
+     <circle id="connector5pin" class="fil1 str1" cx="7110" cy="14142" r="74"/>
+     <circle id="connector6pin" class="fil1 str1" cx="7110" cy="14396" r="74"/>
+     <circle id="connector7pin" class="fil1 str1" cx="7110" cy="14650" r="74"/>
+     <circle id="connector8pin" class="fil1 str1" cx="7110" cy="14904" r="74"/>
+     <circle id="connector9pin" class="fil1 str1" cx="7110" cy="15158" r="74"/>
+     <circle id="connector10pin" class="fil1 str1" cx="7110" cy="15412" r="74"/>
+     <circle id="connector11pin" class="fil1 str1" cx="7110" cy="15666" r="74"/>
+     <circle id="connector12pin" class="fil1 str1" cx="7110" cy="15920" r="74"/>
+     <circle id="connector13pin" class="fil1 str1" cx="7110" cy="16174" r="74"/>
+     <circle id="connector14pin" class="fil1 str1" cx="7110" cy="16428" r="74"/>
+    </g>
+   </g>
+  </g>
+  <g partID="854288460">
+   <g id="_3057281123488">
+    <g id="copper0_27">
+     <circle id="connector0pin_28" class="fil1 str1" cx="9904" cy="12872" r="74"/>
+     <circle id="connector1pin_29" class="fil1 str1" cx="9904" cy="13126" r="74"/>
+     <circle id="connector2pin_30" class="fil1 str1" cx="9904" cy="13380" r="74"/>
+     <circle id="connector3pin_31" class="fil1 str1" cx="9904" cy="13634" r="74"/>
+     <circle id="connector4pin_32" class="fil1 str1" cx="9904" cy="13888" r="74"/>
+     <circle id="connector5pin_33" class="fil1 str1" cx="9904" cy="14142" r="74"/>
+     <circle id="connector6pin_34" class="fil1 str1" cx="9904" cy="14396" r="74"/>
+     <circle id="connector7pin_35" class="fil1 str1" cx="9904" cy="14650" r="74"/>
+     <circle id="connector8pin_36" class="fil1 str1" cx="9904" cy="14904" r="74"/>
+     <circle id="connector9pin_37" class="fil1 str1" cx="9904" cy="15158" r="74"/>
+     <circle id="connector10pin_38" class="fil1 str1" cx="9904" cy="15412" r="74"/>
+     <circle id="connector11pin_39" class="fil1 str1" cx="9904" cy="15666" r="74"/>
+     <circle id="connector12pin_40" class="fil1 str1" cx="9904" cy="15920" r="74"/>
+     <circle id="connector13pin_41" class="fil1 str1" cx="9904" cy="16174" r="74"/>
+     <circle id="connector14pin_42" class="fil1 str1" cx="9904" cy="16428" r="74"/>
+    </g>
+   </g>
+  </g>
+  <g partID="854291360">
+   <g id="_3057281191744">
+    <g id="copper0_43">
+     <g id="copper1">
+      <circle id="connector0pin_44" class="fil1 str1" cx="8126" cy="14142" r="70"/>
+      <circle id="connector1pin_45" class="fil1 str1" cx="9142" cy="14142" r="70"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854352170">
+   <g id="_3057281188352">
+    <g>
+     <g id="copper0_46">
+      <rect id="square" class="fil1 str1" transform="matrix(0 1 -1 0 13532.6 16601.9)" width="161" height="161"/>
+      <circle id="connector0pin_47" class="fil1 str1" transform="matrix(0 1 -1 0 13452.2 16682.3)" r="80"/>
+      <circle id="connector1pin_48" class="fil1 str1" transform="matrix(0 1 -1 0 12952.1 16682.3)" r="80"/>
+      <circle id="connector2pin_49" class="fil1 str1" transform="matrix(0 1 -1 0 12452.2 16682.3)" r="80"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854351940">
+   <g id="_3057281187040">
+    <g>
+     <g id="copper0_50">
+      <rect id="square_51" class="fil1 str1" transform="matrix(0 1 -1 0 9206.59 15077.9)" width="161" height="161"/>
+      <circle id="connector0pin_52" class="fil1 str1" transform="matrix(0 1 -1 0 9126.19 15158.3)" r="80"/>
+      <circle id="connector1pin_53" class="fil1 str1" transform="matrix(0 1 -1 0 8626.18 15158.3)" r="80"/>
+      <circle id="connector2pin_54" class="fil1 str1" transform="matrix(0 1 -1 0 8126.19 15158.3)" r="80"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854338240">
+   <g id="_3057281186560">
+    <g>
+     <g id="copper0_55">
+      <rect id="square_56" class="fil1 str1" x="13126" y="14824" width="161" height="161"/>
+      <circle id="connector0pin_57" class="fil1 str1" cx="13206" cy="14904" r="80"/>
+      <circle id="connector1pin_58" class="fil1 str1" cx="13206" cy="15404" r="80"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854338140">
+   <g id="_3057281185024">
+    <g>
+     <g id="copper0_59">
+      <rect id="square_60" class="fil1 str1" x="13182" y="13592" width="151" height="151"/>
+      <circle id="connector0pin_61" class="fil1 str1" cx="13257" cy="13668" r="75"/>
+      <circle id="connector1pin_62" class="fil1 str1" cx="13257" cy="14168" r="75"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="854357460">
+   <line class="fil1 str2" x1="13715" y1="13885" x2="13353" y2= "13713" />
+  </g>
+  <g partID="854357610">
+   <line class="fil1 str2" x1="13715" y1="14648" x2="13715" y2= "13885" />
+  </g>
+  <g partID="854357310">
+   <line class="fil1 str2" x1="13306" y1="14854" x2="13715" y2= "14648" />
+  </g>
+  <g partID="854357200">
+   <line class="fil1 str2" x1="13064" y1="16682" x2="13341" y2= "16682" />
+  </g>
+  <g partID="854357130">
+   <line class="fil1 str2" x1="12841" y1="16682" x2="12564" y2= "16682" />
+  </g>
+  <g partID="854349820">
+   <line class="fil1 str3" x1="10918" y1="15664" x2="11939" y2= "15664" />
+  </g>
+  <g partID="854350510">
+   <line class="fil1 str3" x1="11939" y1="15664" x2="11937" y2= "16093" />
+  </g>
+  <g partID="854354740">
+   <line class="fil1 str3" x1="10663" y1="15162" x2="10918" y2= "15664" />
+  </g>
+  <g partID="854349750">
+   <line class="fil1 str3" x1="10918" y1="14652" x2="10663" y2= "15162" />
+  </g>
+  <g partID="854349660">
+   <line class="fil1 str3" x1="11104" y1="14651" x2="10918" y2= "14652" />
+  </g>
+  <g partID="854355010">
+   <path class="fil1 str3" d="M13126 14917c0,0 -2003,326 -2003,326"/>
+  </g>
+  <g partID="854355080">
+   <line class="fil1 str3" x1="13134" y1="15447" x2="12518" y2= "15810" />
+  </g>
+  <g partID="854355220">
+   <line class="fil1 str3" x1="13180" y1="14183" x2="12541" y2= "14309" />
+  </g>
+  <g partID="854355150">
+   <line class="fil1 str3" x1="13179" y1="13670" x2="11136" y2= "13726" />
+  </g>
+  <g partID="854346760">
+   <line class="fil1 str3" x1="11104" y1="13126" x2="10769" y2= "13126" />
+  </g>
+  <g partID="854346550">
+   <line class="fil1 str3" x1="10663" y1="12618" x2="9140" y2= "12618" />
+  </g>
+  <g partID="854346620">
+   <line class="fil1 str3" x1="9140" y1="12618" x2="9140" y2= "13384" />
+  </g>
+  <g partID="854346480">
+   <line class="fil1 str3" x1="10666" y1="13045" x2="10663" y2= "12618" />
+  </g>
+  <g partID="854346690">
+   <line class="fil1 str3" x1="9140" y1="13384" x2="7187" y2= "13380" />
+  </g>
+  <g partID="854353570">
+   <line class="fil1 str3" x1="7617" y1="13384" x2="7617" y2= "15162" />
+  </g>
+  <g partID="854353800">
+   <line class="fil1 str3" x1="7617" y1="15162" x2="8043" y2= "15159" />
+  </g>
+  <g partID="854353340">
+   <line class="fil1 str3" x1="7187" y1="13381" x2="7617" y2= "13384" />
+  </g>
+  <g partID="854350950">
+   <line class="fil1 str3" x1="7187" y1="13381" x2="7617" y2= "13384" />
+  </g>
+  <g partID="854352370">
+   <line class="fil1 str3" x1="7617" y1="13384" x2="7617" y2= "16685" />
+  </g>
+  <g partID="854352560">
+   <line class="fil1 str3" x1="7617" y1="16685" x2="9140" y2= "16685" />
+  </g>
+  <g partID="854351330">
+   <line class="fil1 str3" x1="9140" y1="16685" x2="11939" y2= "16685" />
+  </g>
+  <g partID="854351520">
+   <line class="fil1 str3" x1="11939" y1="16685" x2="11937" y2= "16256" />
+  </g>
+  <g partID="854354030">
+   <line class="fil1 str3" x1="8126" y1="14215" x2="8126" y2= "15075" />
+  </g>
+  <g partID="854354300">
+   <line class="fil1 str3" x1="9141" y1="14215" x2="9127" y2= "15075" />
+  </g>
+  <g partID="854354370">
+   <line class="fil1 str3" x1="9850" y1="13434" x2="9194" y2= "14091" />
+  </g>
+  <g partID="854353120">
+   <line class="fil1 str3" x1="9828" y1="16174" x2="8638" y2= "16175" />
+  </g>
+  <g partID="854353230">
+   <line class="fil1 str3" x1="8638" y1="16175" x2="8627" y2= "15242" />
+  </g>
+  <g partID="854346270">
+   <line class="fil1 str3" x1="10161" y1="14907" x2="9959" y2= "15105" />
+  </g>
+  <g partID="854346110">
+   <line class="fil1 str3" x1="10374" y1="14734" x2="10161" y2= "14907" />
+  </g>
+  <g partID="854346200">
+   <line class="fil1 str3" x1="10357" y1="14429" x2="9980" y2= "14402" />
+  </g>
+  <g partID="854346340">
+   <line class="fil1 str3" x1="10666" y1="13965" x2="10663" y2= "14907" />
+  </g>
+  <g partID="854346410">
+   <line class="fil1 str3" x1="10663" y1="14907" x2="10502" y2= "14931" />
+  </g>
+  <g partID="854346870">
+   <line class="fil1 str3" x1="11119" y1="14279" x2="10728" y2= "13937" />
+  </g>
+  <g partID="854350840">
+   <line class="fil1 str3" x1="10663" y1="16175" x2="10663" y2= "15409" />
+  </g>
+  <g partID="854350730">
+   <line class="fil1 str3" x1="10663" y1="15409" x2="10485" y2= "15411" />
+  </g>
+  <g partID="854350620">
+   <line class="fil1 str3" x1="11098" y1="16174" x2="10663" y2= "16175" />
+  </g>
+  <g partID="854345900">
+   <line class="fil1 str3" x1="10416" y1="16175" x2="10413" y2= "15993" />
+  </g>
+  <g partID="854345830">
+   <line class="fil1 str3" x1="9981" y1="16174" x2="10416" y2= "16175" />
+  </g>
+  <g partID="854345690">
+   <line class="fil1 str3" x1="10161" y1="15664" x2="9959" y2= "15466" />
+  </g>
+  <g partID="854345760">
+   <line class="fil1 str3" x1="10342" y1="15664" x2="10161" y2= "15664" />
+  </g>
+  <g partID="854349960">
+   <line class="fil1 str3" x1="11178" y1="16093" x2="11176" y2= "15922" />
+  </g>
+ </g>
+</svg>

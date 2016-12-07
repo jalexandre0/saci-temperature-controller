@@ -117,5 +117,4 @@ Need to be done. Any help will be appreciate.
 - Run other algorithms outside the hardware (slave mode)
 - Improve HTTP api
 - Add continuous integration
-- Add unit tests 
-
+- Add unit tests

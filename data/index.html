@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>SACI:Fermentation Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+      body{
+        background-color: #4C252D;
+        color: #D8D8C5;
+        text-align: center;
+        margin-top: 15vh;
+      }
+
+      h1 {
+        font-size: 8em ;
+      }
+
+      h2 {
+        font-size: 2.5em ;
+      }
+
+      p {
+        font-size: 2em;
+      }
+
+      .form .form-row{
+        display: block;
+        text-align: center;
+        margin-bottom: 0.5em;
+        color: indianred;
+        font-weight: bold ;
+      }
+
+      #button {
+        color: indianred ;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1 id='temperature'> </h1>
+    <h2 id='targetTemp'> </h2>
+    <h2 id='status'> </h2>
+    <h2 id='system'>system menu</h2>
+    <div id='systemmenu'>
+      <form class="form" method="post" action="/config">
+        <div class="form-row">
+          <input type="text" name="targetTemp" placeholder="Target Temperature">
+        </div>
+        <div class="form-row">
+            <input type="text" name="heatDiff" placeholder="Heating Differential">
+        </div>
+        <div class="form-row">
+          <input type="text" name="coolDiff" placeholder="Cooling Differential">
+        </div>
+        <div class="form-row">
+          <input type="text" name="heatTimer" placeholder="Heat Cycle Delay">
+        </div>
+        <div class="form-row">
+          <input type="text" name="coolTimer" placeholder="Cool Cycle Delay">
+        </div>
+        <div class="form-row">
+          <label>
+            Controller Status:
+              <select name="mode" id="button">
+                <option>Automatic</option>
+                <option>Heating</option>
+                <option>Cooling</option>
+                <option>OFF</option>
+                <!-- <option>Slave</option> -->
+              </select>
+          </label>
+        </div>
+        <div class="form-row" id="button">
+          <button type="submit"><b>Submit</b></button>
+        </div>
+      </form>
+    </div>
+
+    <h2 id='profile'>profile menu</h2>
+    <div id='profilemenu'>
+      <form class="form" method="post" action="/setprofile">
+        <div class="form-row">
+          <input type="text" name="step_1" placeholder="Step 1">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_2" placeholder="Step 2">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_3" placeholder="Step 3">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_4" placeholder="Step 4">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_5" placeholder="Step 5">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_6" placeholder="Step 6">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_7" placeholder="Step 7">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_8" placeholder="Step 8">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_9" placeholder="Step 9">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_10" placeholder="Step 10">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_11" placeholder="Step 11">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_12" placeholder="Step 12">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_13" placeholder="Step 13">
+        </div>
+        <div class="form-row">
+          <input type="text" name="step_14" placeholder="Step 14">
+        </div>
+        <div class="form-row">
+          <input type="hidden" name="EOF" value="-255">
+        </div>
+        <div class="form-row">
+          <button type="submit" id='button'>Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script>
+      $(document).ready(function() {
+        $.getJSON( "/status.json", function( data ) {
+          var items = [];
+          $.each( data, function( key, val ) {
+            if ( key == "temperature" ) {
+              temperature = val ;
+              $('#temperature').append(temperature) ;
+            }
+
+            if (key == "target temperature") {
+              targetTemp = val ;
+              $('#targetTemp').append(targetTemp) ;
+            }
+
+            if (key == "status" && val == 1)  {
+              $('#status').append("heating");
+              $('#status').css('color', 'indianred');
+            }
+
+            if (key == "status" && val == 2)  {
+              $('#status').append("cooling");
+              $('#status').css('color', 'steelblue');
+            }
+
+            if (key == "status" && val == 0 )  {
+              $('#status').append("idle");
+            }
+          });
+        });
+
+        //hiding things needed to hide
+        $('#systemmenu').hide() ;
+        $('#profilemenu').hide() ;
+
+        //clickable menu:
+        $('#system').click(function() {
+          $('#systemmenu').slideToggle('1000') ;
+        });
+
+        $('#profile').click(function() {
+          $('#profilemenu').slideToggle('1000') ;
+        });
+      });
+    </script>
+  </body>
+</html>
