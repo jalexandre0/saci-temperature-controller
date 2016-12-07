@@ -1,0 +1,2 @@
+# saci-fermentation
+SACI (Seu Amigo Cervejeiro Inteligente or Your Smart Brew Buddy in a quick translation) is a NODEMCUv2 (ESP8266 12-E) temperature controller for homebrewing and beer fermentation.  SACI was built using inexpensive parts available in any eletronic store (see the BoM and schematics bellow) and software was writen in C/C++ using arduino/genuino framework, so SACI is easy to build, and easier to hack.
