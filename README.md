@@ -74,10 +74,11 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 - NtpClient (link)
 
 ### PlatformIO
-- Clone the project
-- Add project to PlatformIO
-- Adjust your platformio.ini as bellow
-- Build (All dependencies will be handled by IDE)
+- Clone this repository
+- On PlatformIO menu, click on "Open Project Folder" and select repository folder
+- On PlatformIO menu, click on "Initialize or Update PlatformIO Project"
+- Choose NodeMCU 1.0 and click process
+- Update your platformio.ini file as bellow
 
 ```
 [env:nodemcuv2]
@@ -85,7 +86,7 @@ platform = espressif8266
 framework = arduino
 board = nodemcuv2
 build_flags = -Wl,-Tesp8266.flash.4m1m.ld
-//Change to IP to use OTA updates
+#Change to IP to use OTA updates
 upload_port = COM6
 board_f_cpu = 160000000L
 lib_deps =
@@ -93,6 +94,8 @@ lib_deps =
   DallasTemperature
   NTPClient
 ```
+- Create your 'src/config.h' file (use 'src/config.sample.h' as example)
+- Build and deploy and make beer!! PlatformIO will handle any dependencies for you
 
 ### Arduino IDE
 - Clone or download the project

@@ -1,1 +1,8 @@
+.pioenvs
+.clang_complete
+.gcc-flags.json
 src/config.h
+.piolibdeps
+.travis.yml
+platformio.ini
+lib/
