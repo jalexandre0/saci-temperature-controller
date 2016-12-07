@@ -116,3 +116,6 @@ Need to be done. Any help will be appreciate.
 - Test or port the code for atmel hardware (arduino/genuino based boards)
 - Run other algorithms outside the hardware (slave mode)
 - Improve HTTP api
+- Add continuous integration
+- Add unit tests 
+
