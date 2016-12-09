@@ -53,6 +53,9 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 
 ![Image of wiring diagram](http://drive.google.com/uc?export=view&id=0B24GFOLAe1WGemEtNUNNVUNDblk)
 
+**PS: Works on 127v or 220v**
+
+
 ### Bill Of Materials
 - 1x nodeMCU 1.0
 - 2x 15 pin female header (single row)
