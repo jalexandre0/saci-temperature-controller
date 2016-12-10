@@ -74,9 +74,10 @@ void loop() {
   influxSend() ;
 
   // OTA handler
-  ArduinoOTA.handle()   ;
+  ArduinoOTA.handle() ;
+
   //Serial Output: Usefull for some debug
-  //Serial.println(saci.getConfig(_temp)) ;
+  Serial.println(saci.getConfig(_temp)) ;
 
   //Restart watchdog timer
   wdt_reset() ;
