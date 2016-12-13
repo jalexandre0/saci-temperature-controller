@@ -64,7 +64,7 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 - 2x 5V coil relay (10A) or SSR
 - 2x 2 pin screw terminals
 - 1x 3 pin screw terminal
-- 1x 4.7K resistor
+- 1x 4.7K resistor (1/4W)
 - 1x DS18B20 temperature sensor
 - 2x power sockets for fridge and heat element
 - 1x plastic case of your preference (or none...)
