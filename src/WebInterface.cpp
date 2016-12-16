@@ -58,8 +58,13 @@ void setProfile() {
       step[i] = 255 ;
     }
   }
-  saci.initProfile(step, timeClient.getEpochTime()) ;
-  refresh() ;
+  if ( timeClient.update() ) {
+    saci.initProfile(step, timeClient.getEpochTime());
+    refresh() ;
+  }
+  else {
+    interface.send(200, "text/plain",  "NTP Error. Try again later." ) ;
+  }
 }
 
 void interfaceInit() {

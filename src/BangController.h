@@ -1,6 +1,9 @@
 #ifndef BangController_H
 #define BangController_H
 #include <Arduino.h>
+#include <NTPClient.h>
+
+extern NTPClient timeClient ;
 
 class BangController {
   public:
@@ -16,7 +19,7 @@ class BangController {
     //set configuration received by web interface
     void setConfig(String _key, String _value) ;
     //start profile from web interface
-    void initProfile(float _array[14], uint32_t _timestamp) ;
+    bool initProfile(float _array[14], uint32_t _timestamp) ;
     void runProfile(uint32_t _timestamp) ;
     float getTargetTemp() ;
     uint8_t getProfileRun() ;

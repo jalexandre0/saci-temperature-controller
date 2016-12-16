@@ -90,6 +90,12 @@ String BangController::getConfig(float _temp) {
   jsonOutput += "," ;
   jsonOutput += "\"cool trigger\":" ;
   jsonOutput += targetTemp - coolDiff ;
+  jsonOutput += "," ;
+  jsonOutput += "\"lastRamp\":" ;
+  jsonOutput += lastRamp ;
+  jsonOutput += "," ;
+  jsonOutput += "\"EpochTime=\":" ;
+  jsonOutput += timeClient.getEpochTime() ;
   jsonOutput += "}" ;
   return jsonOutput ;
 }
@@ -242,6 +248,7 @@ void BangController::writeConfig() {
   _config += "profileRun=" ;
   _config += profileRun ;
 
+
   File _file = SPIFFS.open(configFile, "w") ;
     _file.print(_config);
     _file.close() ;
@@ -304,7 +311,7 @@ uint32_t BangController::getLastRamp() {
 }
 
 //Save user steps to file, start profile and set first control step
-void BangController::initProfile(float _step[14], uint32_t _timestamp) {
+bool BangController::initProfile(float _step[14], uint32_t _timestamp) {
   //write profile file
   File _file = SPIFFS.open(profileFile, "w") ;
   for (uint8_t i = 0 ; i <= 15 ; i++ ) {

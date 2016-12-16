@@ -26,8 +26,10 @@ void setup () {
   // IF hardware won´t receive a reset signal under 8seconds, reboot the unit
   wdt_enable(8000) ;
   Serial.begin(115200) ;
+
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pass);
+
   ArduinoOTA.onStart([]() {
     //nothing to do on start
   });
@@ -52,19 +54,24 @@ void setup () {
 }
 
 void loop() {
-  timeClient.update() ;
+  //read temperature
   float _temp = readTemp() ;
-  uint32_t now = timeClient.getEpochTime() ;
-  uint32_t nextRampUpdate = saci.getLastRamp() + 86400 ;
 
-  // controller main loop. Here the software when start/stop cooling or heating
+  //main controller action
   saci.run(_temp) ;
 
-  // Profile evaluation. Increase ramp one day after start until hit the
-  // end of profile
-  if(saci.getProfileRun() == 1 && now >= nextRampUpdate ) {
-    saci.runProfile(now) ;
-  }
+  // Init vars for profile
+  // Empty vars make profiles jump. (See issue #1)
+  static uint32_t now = 0 ;
+  static uint32_t nextRampUpdate = saci.getLastRamp() + 86400 ;
+
+  //fix_profile debug
+  if ( timeClient.update() ) {
+      now = timeClient.getEpochTime() ;
+      if(saci.getProfileRun() == 1 && now >= nextRampUpdate ) {
+      saci.runProfile(now) ;
+      }
+    }
 
   //Web interface handler
   interface.handleClient() ;
@@ -78,6 +85,7 @@ void loop() {
 
   //Serial Output: Usefull for some debug
   Serial.println(saci.getConfig(_temp)) ;
+  Serial.println(" ");
 
   //Restart watchdog timer
   wdt_reset() ;
