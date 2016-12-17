@@ -5,6 +5,7 @@
 #include "config.h"
 #include "WebInterface.h"
 #include <NTPClient.h>
+#include <ESP8266Wifi.h>
 
 //Plugins I wrote for myself
 #include "plugins/ThingSpeak.h"
@@ -66,10 +67,12 @@ void loop() {
   static uint32_t nextRampUpdate = saci.getLastRamp() + 86400 ;
 
   //fix_profile debug
-  if ( timeClient.update() ) {
-      now = timeClient.getEpochTime() ;
-      if(saci.getProfileRun() == 1 && now >= nextRampUpdate ) {
-      saci.runProfile(now) ;
+  if(WL_CONNECTED && WiFi.localIP().toString() != "0.0.0.0") {
+    if ( timeClient.update() ) {
+        now = timeClient.getEpochTime() ;
+        if(saci.getProfileRun() == 1 && now >= nextRampUpdate ) {
+          saci.runProfile(now) ;
+        }
       }
     }
 
