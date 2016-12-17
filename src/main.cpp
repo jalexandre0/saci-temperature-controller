@@ -80,7 +80,7 @@ void loop() {
   interface.handleClient() ;
 
   //My Plugins
-  thingSpeakSend() ;
+  //thingSpeakSend() ;
   influxSend() ;
 
   // OTA handler

@@ -24,6 +24,8 @@ class BangController {
     float getTargetTemp() ;
     uint8_t getProfileRun() ;
     uint32_t getLastRamp() ;
+    uint8_t getMode() ;
+    uint8_t getStatus() ;
 
   private:
     String configFile ;

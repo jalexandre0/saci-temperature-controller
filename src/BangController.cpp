@@ -310,6 +310,13 @@ uint32_t BangController::getLastRamp() {
   return lastRamp;
 }
 
+uint8_t BangController::getMode() {
+  return mode ;
+}
+
+uint8_t BangController::getStatus() {
+  return status ;
+}
 //Save user steps to file, start profile and set first control step
 bool BangController::initProfile(float _step[14], uint32_t _timestamp) {
   //write profile file
