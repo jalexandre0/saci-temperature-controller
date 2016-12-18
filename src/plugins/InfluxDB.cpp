@@ -9,7 +9,7 @@ void influxSend() {
   const char* host = "192.168.1.3" ;
   const int port = 8086 ;
 
-  if (millis() > _lastSend + 3000) {
+  if (millis() > _lastSend + 1000) {
     String  _payload = "devices,uniqueID=";
             _payload += ESP.getChipId() ;
             _payload += " " ;
@@ -23,6 +23,8 @@ void influxSend() {
             _payload +=  saci.getStatus();
             _payload += ",temperature=" ;
             _payload +=  readTemp();
+            _payload += ",fridgeTemperature=" ;
+            _payload +=  readFridgeTemp();
             _payload += ",Target=" ;
             _payload +=  saci.getTargetTemp();
             _payload += ",profile=" ;
@@ -32,7 +34,9 @@ void influxSend() {
             _payload += "\",lastRamp=\"" ;
             _payload +=  saci.getLastRamp();
             _payload += "\"" ;
-            //Serial.println(_payload) ;
+            _payload += ",controlStep=" ;
+            _payload +=  saci.getControlStep() ;
+            Serial.println(_payload) ;
 
     if (client.connect(host, port)) {
       if ( client.connect(host, port) ) {

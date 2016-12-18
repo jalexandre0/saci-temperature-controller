@@ -8,6 +8,7 @@ extern OneWire  pin;
 extern DallasTemperature tempSensor ;
 
 float readTemp() ;
+float readFridgeTemp() ;
 void sensorInit() ;
 
 #endif
