@@ -76,14 +76,14 @@ void loop() {
 
   //My Plugins
   //thingSpeakSend() ;
-  influxSend() ;
+  //influxSend() ;
 
   // OTA handler
   ArduinoOTA.handle() ;
 
   //Serial Output: Usefull for some debug
   //Serial.println(saci.getConfig(_temp)) ;
-  //  Serial.println(" ");
+  //Serial.println(" ");
 
   //Restart watchdog timer
   wdt_reset() ;

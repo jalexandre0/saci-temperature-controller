@@ -8,8 +8,10 @@ void influxSend() {
   static uint32_t _lastSend; ;
   const char* host = "192.168.1.3" ;
   const int port = 8086 ;
+  uint8_t _delay = 180 ;
+  uint32_t now = ( millis() / 1000 ) ;
 
-  if (millis() > _lastSend + 1000) {
+  if (now > _lastSend + _delay) {
     String  _payload = "devices,uniqueID=";
             _payload += ESP.getChipId() ;
             _payload += " " ;
