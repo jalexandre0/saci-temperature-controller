@@ -5,6 +5,7 @@
 #include "config.h"
 #include "WebInterface.h"
 #include <NTPClient.h>
+#include <ESP8266Wifi.h>
 
 //Plugins I wrote for myself
 #include "plugins/ThingSpeak.h"
@@ -60,16 +61,13 @@ void loop() {
   //main controller action
   saci.run(_temp) ;
 
-  // Init vars for profile
-  // Empty vars make profiles jump. (See issue #1)
-  static uint32_t now = 0 ;
-  static uint32_t nextRampUpdate = saci.getLastRamp() + 86400 ;
-
   //fix_profile debug
-  if ( timeClient.update() ) {
-      now = timeClient.getEpochTime() ;
-      if(saci.getProfileRun() == 1 && now >= nextRampUpdate ) {
-      saci.runProfile(now) ;
+  if(WL_CONNECTED && WiFi.localIP().toString() != "0.0.0.0") {
+    if ( timeClient.update() ) {
+        uint32_t now = timeClient.getEpochTime() ;
+        if(saci.getProfileRun() == 1 && now > saci.getLastRamp() + 86400 ) {
+          saci.runProfile(now) ;
+        }
       }
     }
 
@@ -77,15 +75,15 @@ void loop() {
   interface.handleClient() ;
 
   //My Plugins
-  thingSpeakSend() ;
-  influxSend() ;
+  //thingSpeakSend() ;
+  //influxSend() ;
 
   // OTA handler
   ArduinoOTA.handle() ;
 
   //Serial Output: Usefull for some debug
-  Serial.println(saci.getConfig(_temp)) ;
-  Serial.println(" ");
+  //Serial.println(saci.getConfig(_temp)) ;
+  //Serial.println(" ");
 
   //Restart watchdog timer
   wdt_reset() ;

@@ -96,6 +96,9 @@ String BangController::getConfig(float _temp) {
   jsonOutput += "," ;
   jsonOutput += "\"EpochTime=\":" ;
   jsonOutput += timeClient.getEpochTime() ;
+  jsonOutput += "," ;
+  jsonOutput += "\"ControlStep=\":" ;
+  jsonOutput += controlStep ;
   jsonOutput += "}" ;
   return jsonOutput ;
 }
@@ -247,6 +250,7 @@ void BangController::writeConfig() {
   _config +=  '\n' ;
   _config += "profileRun=" ;
   _config += profileRun ;
+  _config +=  '\n' ;
 
 
   File _file = SPIFFS.open(configFile, "w") ;
@@ -310,6 +314,17 @@ uint32_t BangController::getLastRamp() {
   return lastRamp;
 }
 
+uint32_t BangController::getControlStep() {
+  return controlStep;
+}
+
+uint8_t BangController::getMode() {
+  return mode ;
+}
+
+uint8_t BangController::getStatus() {
+  return status ;
+}
 //Save user steps to file, start profile and set first control step
 bool BangController::initProfile(float _step[14], uint32_t _timestamp) {
   //write profile file
