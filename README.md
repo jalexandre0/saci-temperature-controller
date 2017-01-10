@@ -98,7 +98,10 @@ lib_deps =
   NTPClient
 ```
 - Create your 'src/config.h' file (use 'src/config.sample.h' as example)
-- Build, deploy and make beer!! PlatformIO will handle any dependencies for you
+- Build main image and upload
+- Build SPIFFS filesystem and upload.
+- Find your address using serial monitor
+- Access it, configure, enjoy and make beer. :) 
 
 ### Arduino IDE
 - Install ESP8266 support as described [here](https://github.com/esp8266/Arduino)

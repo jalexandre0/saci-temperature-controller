@@ -82,8 +82,8 @@ void loop() {
   ArduinoOTA.handle() ;
 
   //Serial Output: Usefull for some debug
-  //Serial.println(saci.getConfig(_temp)) ;
-  //Serial.println(" ");
+  Serial.println(saci.getConfig(_temp)) ;
+  Serial.println(" ");
 
   //Restart watchdog timer
   wdt_reset() ;
