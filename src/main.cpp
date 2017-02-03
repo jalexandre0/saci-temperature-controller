@@ -55,11 +55,8 @@ void setup () {
 }
 
 void loop() {
-  //read temperature
-  float _temp = readTemp() ;
-
   //main controller action
-  saci.run(_temp) ;
+  saci.run() ;
 
   //fix_profile debug
   if(WL_CONNECTED && WiFi.localIP().toString() != "0.0.0.0") {
@@ -76,13 +73,13 @@ void loop() {
 
   //My Plugins
   //thingSpeakSend() ;
-  //influxSend() ;
+  influxSend() ;
 
   // OTA handler
   ArduinoOTA.handle() ;
 
   //Serial Output: Usefull for some debug
-  Serial.println(saci.getConfig(_temp)) ;
+  Serial.println(saci.getConfig()) ;
   Serial.println(" ");
 
   //Restart watchdog timer

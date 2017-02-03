@@ -141,7 +141,7 @@
         $.getJSON( "/status.json", function( data ) {
           var items = [];
           $.each( data, function( key, val ) {
-            if ( key == "temperature" ) {
+            if ( key == "beer temperature" ) {
               temperature = val ;
               $('#temperature').append(temperature) ;
             }
