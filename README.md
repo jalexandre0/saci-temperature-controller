@@ -89,8 +89,6 @@ platform = espressif8266
 framework = arduino
 board = nodemcuv2
 build_flags = -Wl,-Tesp8266.flash.4m1m.ld
-#Change to IP to use OTA updates
-upload_port = COM6
 board_f_cpu = 160000000L
 lib_deps =
   OneWire
