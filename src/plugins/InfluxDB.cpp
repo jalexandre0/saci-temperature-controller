@@ -8,7 +8,7 @@ void influxSend() {
   static uint32_t _lastSend; ;
   const char* host = "192.168.1.3" ;
   const int port = 8086 ;
-  uint8_t _delay = 180 ;
+  uint8_t _delay = 15 ;
   uint32_t now = ( millis() / 1000 ) ;
 
   if (now > _lastSend + _delay) {
@@ -23,11 +23,11 @@ void influxSend() {
             _payload +=  saci.getMode();
             _payload += ",status=" ;
             _payload +=  saci.getStatus();
-            _payload += ",temperature=" ;
-            _payload +=  readTemp();
+            _payload += ",beerTemperature=" ;
+            _payload +=  beerTemp();
             _payload += ",fridgeTemperature=" ;
-            _payload +=  readFridgeTemp();
-            _payload += ",Target=" ;
+            _payload +=  fridgeTemp();
+            _payload += ",targetTemperature=" ;
             _payload +=  saci.getTargetTemp();
             _payload += ",profile=" ;
             _payload +=  saci.getProfileRun();
@@ -42,7 +42,7 @@ void influxSend() {
 
     if (client.connect(host, port)) {
       if ( client.connect(host, port) ) {
-        client.println("POST /write?db=opensaci HTTP/1.1") ;
+        client.println("POST /write?db=saci HTTP/1.1") ;
         client.print("Host: ") ;
         client.println(host) ;
         client.println("User-Agent: SACI/1.0");
@@ -52,7 +52,7 @@ void influxSend() {
         client.println(_payload.length());
         client.println();
         client.println(_payload);
-        _lastSend = millis() ;
+        _lastSend = millis() / 1000;
       }
     }
   }

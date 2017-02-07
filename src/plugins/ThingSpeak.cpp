@@ -18,9 +18,8 @@ void thingSpeakSend() {
 
   //no token, no submit =)
   if (now >= _lastSend + _delay && strlen(tsToken) == 16 ) {
-  float _temp = readTemp() ;
   float _targetTemp = saci.getTargetTemp() ;
-
+  float _temp = beerTemp() ;
   //Arduino String Class don´t support macros (#define tsToken), so I
   //take the other way.
   char _payload[70];

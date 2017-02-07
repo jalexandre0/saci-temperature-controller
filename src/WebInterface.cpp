@@ -6,7 +6,7 @@ ESP8266WebServer interface(80) ;
 
 //Spits a Json String if /status.json URL is called
 void json() {
-  String _jsonString = saci.getConfig(readTemp()) ;
+  String _jsonString = saci.getConfig() ;
   interface.send(200, "application/json", _jsonString ) ;
 }
 

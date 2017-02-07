@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include <FS.h>
 #include <ESP8266WiFi.h>
+#include "DS18B20.h"
 
 
 BangController::BangController(uint8_t _coolPin, uint8_t _heatPin, \
@@ -45,7 +46,7 @@ void BangController::cool(bool _status) {
   }
 }
 
-String BangController::getConfig(float _temp) {
+String BangController::getConfig() {
   String jsonOutput =  "{\"id\":" ;
   jsonOutput += ESP.getChipId() ;
   jsonOutput += "," ;
@@ -67,8 +68,11 @@ String BangController::getConfig(float _temp) {
   jsonOutput += status;
   jsonOutput += "\"";
   jsonOutput += "," ;
-  jsonOutput += "\"temperature\":" ;
-  jsonOutput += _temp;
+  jsonOutput += "\"beer temperature\":" ;
+  jsonOutput += beerTemp();
+  jsonOutput += "," ;
+  jsonOutput += "\"fridge temperature\":" ;
+  jsonOutput += fridgeTemp();
   jsonOutput += "," ;
   jsonOutput += "\"target temperature\":" ;
   jsonOutput += targetTemp ;
@@ -103,7 +107,7 @@ String BangController::getConfig(float _temp) {
   return jsonOutput ;
 }
 
-void BangController::run(float _temp ) {
+void BangController::run() {
 
 
   float _maxHeat = targetTemp + heatDiff ;
@@ -119,7 +123,7 @@ void BangController::run(float _temp ) {
   //Mode 1 == AUTOMATIC
   if (mode == 1) {
     //Starting heat if temp is too cool and heat is off
-    if ( _temp <= _maxCool && status != 1 ) {
+    if ( beerTemp() <= _maxCool && status != 1 ) {
       if ((millis() / 1000) >= ( lastHeat + heatTimer)) {
         BangController::heat(true) ;
         return ;
@@ -127,7 +131,7 @@ void BangController::run(float _temp ) {
     }
 
     //Starting cool if temp is too hot and cool is off
-    if ( _temp >= _maxHeat && status != 2 ) {
+    if ( beerTemp() >= _maxHeat && status != 2 ) {
       if ((millis() / 1000) >= (lastCool + coolTimer)) {
         BangController::cool(true) ;
         return ;
@@ -135,13 +139,13 @@ void BangController::run(float _temp ) {
     }
 
     //Stop heating if setpoint is reached
-    if ( _temp >= targetTemp && status == 1 ) {
+    if ( beerTemp() >= targetTemp && status == 1 ) {
       BangController::heat(false) ;
       return ;
     }
 
     //Stop cooling if setpoint is reached
-    if ( _temp <= targetTemp && status == 2 ) {
+    if ( beerTemp() <= targetTemp && status == 2 ) {
       BangController::cool(false) ;
       return ;
     }
@@ -149,14 +153,14 @@ void BangController::run(float _temp ) {
 
   //Mode 2 == Only Heating
   if (mode == 2) {
-    if ( _temp <= _maxCool && status != 1 ) {
+    if ( beerTemp() <= _maxCool && status != 1 ) {
       if ( (millis() / 1000 ) >= lastHeat + heatTimer ) {
         BangController::heat(true) ;
         return ;
       }
     }
 
-    if ( _temp >= targetTemp && status == 1 ) {
+    if ( beerTemp() >= targetTemp && status == 1 ) {
       BangController::heat(false) ;
       return ;
     }
@@ -164,7 +168,7 @@ void BangController::run(float _temp ) {
 
   //Mode 3 == Only Cooling
   if (mode == 3) {
-    if ( _temp >= _maxHeat && status != 2 ) {
+    if ( beerTemp() >= _maxHeat && status != 2 ) {
       if ( (millis() / 1000 ) >= lastCool + coolTimer ) {
         BangController::cool(true) ;
         return ;
@@ -172,7 +176,7 @@ void BangController::run(float _temp ) {
     }
 
 
-    if ( _temp <= targetTemp && status == 2 ) {
+    if (  beerTemp() <= targetTemp && status == 2 ) {
       BangController::cool(false) ;
       return ;
     }

@@ -11,11 +11,11 @@ class BangController {
     ~BangController() ;
     void heat(bool _status) ;
     void cool(bool _status) ;
-    void run(float _temp ) ;
+    void run() ;
     void loadConfig() ;
     void writeConfig() ;
     //Returns a json string with configuration
-    String getConfig(float _temp) ;
+    String getConfig() ;
     //set configuration received by web interface
     void setConfig(String _key, String _value) ;
     //start profile from web interface

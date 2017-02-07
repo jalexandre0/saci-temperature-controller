@@ -7,8 +7,9 @@
 extern OneWire  pin;
 extern DallasTemperature tempSensor ;
 
-float readTemp() ;
-float readFridgeTemp() ;
+float beerTemp() ;
+float fridgeTemp() ;
 void sensorInit() ;
-
+static float _beerTemp ;
+static float _fridgeTemp ;
 #endif
