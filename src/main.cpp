@@ -5,7 +5,7 @@
 #include "config.h"
 #include "WebInterface.h"
 #include <NTPClient.h>
-#include <ESP8266Wifi.h>
+#include <ESP8266WiFi.h>
 
 //Plugins I wrote for myself
 #include "plugins/ThingSpeak.h"
@@ -20,7 +20,7 @@ BangController saci(heatPin, coolPin, "/saci.txt", "saciprofile.txt");
 
 //NTP  for profile
 WiFiUDP udpSocket;
-NTPClient timeClient(udpSocket, "ntp.on.br", -10800, 60000);
+NTPClient timeClient(udpSocket, "pool.ntp.br", -10800, 60000);
 
 void setup () {
   // Starting watchdog.
