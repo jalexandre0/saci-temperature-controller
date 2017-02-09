@@ -23,8 +23,12 @@ WiFiUDP udpSocket;
 NTPClient timeClient(udpSocket, "pool.ntp.br", -10800, 60000);
 
 void setup () {
-  // Starting watchdog.
-  // IF hardware won´t receive a reset signal under 8seconds, reboot the unit
+
+  /* Watchdog register will wait 8000ms for a signal.
+     If signal do not come (ie function loop or hardware fail),
+     micro processor will reset itself
+  */
+
   wdt_enable(8000) ;
   Serial.begin(115200) ;
 
@@ -71,9 +75,14 @@ void loop() {
   //Web interface handler
   interface.handleClient() ;
 
-  //My Plugins
-  //thingSpeakSend() ;
-  influxSend() ;
+  //My Plugins (enable or disable adjusting "config.h")
+  if (plugin_InfluxDB) {
+    influxSend() ;
+  }
+
+  if (plugin_ThingSpeak) {
+    thingSpeakSend() ;
+  }
 
   // OTA handler
   ArduinoOTA.handle() ;

@@ -1,19 +1,25 @@
-// 1 - rename this file to config.h
-// 2 - adjust your wireless configurarion
-// 3 - OPTIONAL - Put your thingspeak token if you want enable it,
-//            or leave any string < 16 to disable it
-//            (null is a good idea, anyway..)
-// 4 - enjoy your  beer. :P
+/* false -> Plugin disabled
+   true -> Plugin enabled
+*/
 
 #ifndef config_H
 #define config_H
 #include <Arduino.h>
 
 //Wireless Setup
-#define ssid   "my_wireless_ssid"
+#define ssid   "my_ssid"
 #define pass   "my_wireless_password"
 
-//ThingSpeak.com write token channel
-#define tsToken "null"
+//Thing Speak
+#define plugin_ThingSpeak  false
+#define tsToken "my_thingspeak_token"
+
+//InfluxDB
+#define plugin_InfluxDB false
+#define influxDB_host   "my_influxDB_host"
+#define influxDB_port   8086
+
+//UDPLog
+#define plugin_UDPLog false
 
 #endif
