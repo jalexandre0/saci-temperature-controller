@@ -2,12 +2,12 @@
 #include "InfluxDB.h"
 #include <ESP8266WiFi.h>
 #include "../DS18B20.h"
+#include "../config.h"
+
 
 void influxSend() {
   WiFiClient client ;
-  static uint32_t _lastSend; ;
-  const char* host = "192.168.1.3" ;
-  const int port = 8086 ;
+  static uint32_t _lastSend;
   uint8_t _delay = 15 ;
   uint32_t now = ( millis() / 1000 ) ;
 
@@ -40,11 +40,10 @@ void influxSend() {
             _payload +=  saci.getControlStep() ;
             Serial.println(_payload) ;
 
-    if (client.connect(host, port)) {
-      if ( client.connect(host, port) ) {
+    if ( client.connect(influxDB_host, influxDB_port) ) {
         client.println("POST /write?db=saci HTTP/1.1") ;
         client.print("Host: ") ;
-        client.println(host) ;
+        client.println(influxDB_host) ;
         client.println("User-Agent: SACI/1.0");
         client.println("Connection: close");
         client.println("Content-Type: application/x-www-form-urlencoded");
@@ -56,4 +55,3 @@ void influxSend() {
       }
     }
   }
-}

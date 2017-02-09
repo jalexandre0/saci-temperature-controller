@@ -1,3 +1,7 @@
+/* Need better work here, like class
+  for remote logging and debbuging
+*/
+
 #include "UDPLog.h"
 #include "WiFiUdp.h"
 

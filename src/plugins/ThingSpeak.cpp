@@ -1,6 +1,7 @@
 #include <WiFiClientSecure.h>
 #include "../DS18B20.h"
 #include "ThingSpeak.h"
+#include "../config.h"
 
 void thingSpeakSend() {
   static uint32_t _lastSend;
@@ -16,16 +17,14 @@ void thingSpeakSend() {
   uint8_t _delay = 180 ;
   uint32_t now = ( millis() / 1000 ) ;
 
-  //no token, no submit =)
-  if (now >= _lastSend + _delay && strlen(tsToken) == 16 ) {
-  float _targetTemp = saci.getTargetTemp() ;
-  float _temp = beerTemp() ;
-  //Arduino String Class don´t support macros (#define tsToken), so I
-  //take the other way.
-  char _payload[70];
+  if ( now >= _lastSend + _delay ) {
+    float _targetTemp = saci.getTargetTemp() ;
+    float _temp = beerTemp() ;
 
-  //Hack to print float values with sprintf. :)
-  sprintf(_payload, "api_key=%s&field1=%d.%02d&field2=%d.%02d&field3=%d",\
+    char _payload[70];
+
+    //Hack to print float values with sprintf. :)
+    sprintf(_payload, "api_key=%s&field1=%d.%02d&field2=%d.%02d&field3=%d",\
          tsToken, (int)(_temp), (int)(_temp * 100)%100, (int)(_targetTemp),\
          (int)(_targetTemp * 100)%100, now) ;
 

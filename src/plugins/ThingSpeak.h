@@ -2,7 +2,6 @@
 #define ThingSpeak_H
 
 #include "../BangController.h"
-#include "../config.h"
 
 extern BangController saci ;
 
