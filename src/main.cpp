@@ -9,8 +9,9 @@
 
 //Plugins I wrote for myself
 #include "plugins/ThingSpeak.h"
-//#include "plugins/UDPLog.h"
+#include "plugins/UDPLog.h"
 #include "plugins/InfluxDB.h"
+#include "plugins/Mqtt.h"
 
 
 uint8_t heatPin = D7 ;
@@ -56,9 +57,18 @@ void setup () {
 
   //load config from file to memory
   saci.loadConfig() ;
+
+  if (mqttPlugin) {
+    mqttInit() ;
+  }
 }
 
 void loop() {
+  static uint32_t mqttLastSend ;
+  static uint32_t thingSpeakLastSend ;
+  static uint32_t influxdbLastSend ;
+  uint32_t now = millis()  / 1000 ;
+
   //main controller action
   saci.run() ;
 
@@ -75,22 +85,38 @@ void loop() {
   //Web interface handler
   interface.handleClient() ;
 
+  // OTA handler
+  ArduinoOTA.handle() ;
+
   //My Plugins (enable or disable adjusting "config.h")
-  if (plugin_InfluxDB) {
+  if (mqttPlugin) {
+    //receiver subscribed topics
+    mqttLoop() ;
+
+    //sender
+    if (now > mqttLastSend + mqttDelay ) {
+      mqttLastSend = now ;
+      mqttPublish() ;
+    }
+  }
+
+  if (influxdbPlugin && now > influxdbLastSend + influxdbDelay ) {
+    influxdbLastSend = now ;
     influxSend() ;
   }
 
-  if (plugin_ThingSpeak) {
+  if (thingSpeakPlugin && now > thingSpeakLastSend + thingSpeakDelay ) {
+    thingSpeakLastSend = now ;
     thingSpeakSend() ;
   }
-
-  // OTA handler
-  ArduinoOTA.handle() ;
 
   //Serial Output: Usefull for some debug
   Serial.println(saci.getConfig()) ;
   Serial.println(" ");
 
-  //Restart watchdog timer
+  //Prepare sensors for the next read
+  sensorRequest() ;
+
   wdt_reset() ;
+
 }

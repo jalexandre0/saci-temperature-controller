@@ -10,6 +10,7 @@ extern DallasTemperature tempSensor ;
 float beerTemp() ;
 float fridgeTemp() ;
 void sensorInit() ;
+void sensorRequest() ;
 static float _beerTemp ;
 static float _fridgeTemp ;
 #endif

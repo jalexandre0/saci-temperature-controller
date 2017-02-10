@@ -3,10 +3,11 @@
 OneWire  pin(D2);
 DallasTemperature tempSensor(&pin) ;
 
-float beerTemp() {
-  static float _temp  ;
+void sensorRequest() {
   tempSensor.requestTemperatures() ;
-  //naive attempt to make a low pass filter
+}
+
+float beerTemp() {
   _beerTemp = (0.95 * _beerTemp ) + ( 0.05 * tempSensor.getTempCByIndex(0));
   return _beerTemp ;
 }

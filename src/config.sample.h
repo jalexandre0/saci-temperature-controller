@@ -7,19 +7,29 @@
 #include <Arduino.h>
 
 //Wireless Setup
-#define ssid   "my_ssid"
-#define pass   "my_wireless_password"
+#define ssid   "Wireless SSID"
+#define pass   "Wireless Password"
 
 //Thing Speak
-#define plugin_ThingSpeak  false
-#define tsToken "my_thingspeak_token"
+#define thingSpeakPlugin  false
+#define thingSpeakToken "Thing Speak Token"
+//Delay between sends, in seconds
+#define thingSpeakDelay 300
 
 //InfluxDB
-#define plugin_InfluxDB false
-#define influxDB_host   "my_influxDB_host"
-#define influxDB_port   8086
-
+#define influxdbPlugin false
+#define influxdbHost    "Influx DB IP Address"
+#define influxdbPort    8086
+#define influxdbDelay   40
 //UDPLog
-#define plugin_UDPLog false
+#define udplogPlugin false
+
+//MQTT
+#define mqttPlugin false
+#define mqttUser   "Mqtt Username"
+#define mqttPass   "Mqtt Pass"
+#define mqttServer "Mqtt Server"
+#define mqttPort   1883
+#define mqttDelay  180
 
 #endif
