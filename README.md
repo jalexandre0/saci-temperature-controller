@@ -37,6 +37,9 @@ and a draft for Rsyslog integration (Some work is needed here).
 ### HTTP POST config and json responses
 All the configuration is passed to SACI over URL encoded post, so, if you know how to manipulate this, you are able to create your own interface e/or dashboard to view your brew status.
 
+###Everyone loves MQTT
+Just push information to your smartphone or desktop using one of bazillions free MQTT dashboards and public brokers around the internet. 
+
 ### Plugin Ready
 Already have a working code for **<insert your favorite IoT provider here>** and
 want to put it in SACI?
@@ -80,6 +83,7 @@ I don´t have the skills to write eletronic diagrams and schematics for other pe
 - [OneWire](https://github.com/PaulStoffregen/OneWire)
 - [DallasTemperature](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 - [NtpClient](https://github.com/arduino-libraries/NTPClient)
+- [PubSubClient](https://github.com/knolleary/pubsubclient)
 
 ### PlatformIO
 - Clone this repository
@@ -101,6 +105,7 @@ lib_deps =
   OneWire
   DallasTemperature
   NTPClient
+  PubSubClient
 ```
 
 - Create your 'src/config.h' file (use 'src/config.sample.h' as example)
