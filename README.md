@@ -146,7 +146,8 @@ $ git clone https://github.com/jalexandre0/saci-temperature-controller.git
 $ cd saci-temperature-controller
 $ cp src/config.sample.h /src/config.h
 $ vim src/config.h
-$ platformio run -t flash
+$ platformio run -t upload
+$ platformio run -t uploadfs
 
 ```
 
