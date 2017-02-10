@@ -38,7 +38,7 @@ and a draft for Rsyslog integration (Some work is needed here).
 All the configuration is passed to SACI over URL encoded post, so, if you know how to manipulate this, you are able to create your own interface e/or dashboard to view your brew status.
 
 ###Everyone loves MQTT
-Just push information to your smartphone or desktop using one of bazillions free MQTT dashboards and public brokers around the internet. 
+Just push information to your smartphone or desktop using one of bazillions free MQTT dashboards and public brokers around the internet.
 
 ### Plugin Ready
 Already have a working code for **<insert your favorite IoT provider here>** and
@@ -134,19 +134,19 @@ lib_deps =
 You can build SACI in any operating system with support to  Python 2.7 and [PlatformIo-Core.](http://docs.platformio.org/en/stable/core.html)
 The instructions bellow are tested headless Raspeberry PI with latest raspbian distro.
 
-Check the [docs](http://docs.platformio.org/en/stable/installation.html#installation) if the method bellow do not work for you. 
+Check the [docs](http://docs.platformio.org/en/stable/installation.html#installation) if the method bellow do not work for you.
 
 
 ```
 $ sudo apt-get install python-pip
-  #Fix errors about requests 
+  #Fix errors about requests
 $ rm -rf /usr/local/lib/python2.7/dist-packages/requests*
 $ sudo -i pip install -U platformio
 $ git clone https://github.com/jalexandre0/saci-temperature-controller.git
 $ cd saci-temperature-controller
 $ cp src/config.sample.h /src/config.h
 $ vim src/config.h
-$ platformio run -t flash 
+$ platformio run -t flash
 
 ```
 
@@ -154,7 +154,7 @@ $ platformio run -t flash
 - Improve software build instructions
 - Write eletronic diagrams that people can read and follow
 - Review hardware and schematics to improve safety
-- Test any CLI build mode
+- ~~Test any CLI build mode~~
 - Fix typos and spelling errors
 - Save and load profiles by name
 - Fix / Clean up / review code
