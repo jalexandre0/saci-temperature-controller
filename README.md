@@ -131,7 +131,24 @@ lib_deps =
 - Deploy firmware and filesystem using OTA ou USB port
 
 ### CLI
-Need to be done. Any help will be appreciate.
+You can build SACI in any operating system with support to  Python 2.7 and [PlatformIo-Core.](http://docs.platformio.org/en/stable/core.html)
+The instructions bellow are tested headless Raspeberry PI with latest raspbian distro.
+
+Check the [docs](http://docs.platformio.org/en/stable/installation.html#installation) if the method bellow do not work for you. 
+
+
+```
+$ sudo apt-get install python-pip
+  #Fix errors about requests 
+$ rm -rf /usr/local/lib/python2.7/dist-packages/requests*
+$ sudo -i pip install -U platformio
+$ git clone https://github.com/jalexandre0/saci-temperature-controller.git
+$ cd saci-temperature-controller
+$ cp src/config.sample.h /src/config.h
+$ vim src/config.h
+$ platformio run -t flash 
+
+```
 
 # Help and todo
 - Improve software build instructions
