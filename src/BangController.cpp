@@ -24,6 +24,7 @@ BangController::~BangController() {
 
 void BangController::heat(bool _status) {
   if( _status ) {
+    digitalWrite(coolPin, LOW) ;
     digitalWrite(heatPin, HIGH) ;
     status = 1 ;
   }
@@ -36,6 +37,7 @@ void BangController::heat(bool _status) {
 
 void BangController::cool(bool _status) {
   if ( _status ) {
+    digitalWrite(heatPin, LOW) ;
     digitalWrite(coolPin, HIGH) ;
     status = 2 ;
   }

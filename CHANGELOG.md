@@ -1,3 +1,8 @@
+## [New Release]  2017-02-12
+
+### Changed
+- Bug Fix: Fixed a bug where heat and cool can switched on at same time. 
+
 ## [New Release]  2017-02-10
 
 ### Added
