@@ -15,7 +15,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 void mqttPublish() {
-  char msg[6] ;
+  char msg[10] ;
 
   //dtostrf(double, buffer size, digits, buffer)
   dtostrf(beerTemp(), 6, 2, msg);
@@ -27,19 +27,49 @@ void mqttPublish() {
   dtostrf(fridgeTemp(), 6, 2, msg);
   client.publish("fridgeTemp", msg, true) ;
 
-  //ito(integer, buffer, base)
-  itoa(saci.getStatus(), msg, 10);
-  client.publish("status", msg, true) ;
+  if (saci.getStatus() == 0) {
+    client.publish("status", "idle", true) ;
+  }
 
-  itoa(saci.getMode(), msg, 10);
-  client.publish("mode", msg, true) ;
+  if (saci.getStatus() == 1) {
+    client.publish("status", "cooling", true) ;
+  }
+
+  if (saci.getStatus() == 2) {
+    client.publish("status", "heating", true) ;
+  }
+
+  if (saci.getMode() == 0) {
+    client.publish("mode", "off", true) ;
+  }
+
+  if (saci.getMode() == 1) {
+    client.publish("mode", "auto mode", true) ;
+  }
+
+  if (saci.getMode() == 2) {
+    client.publish("mode", "heat mode", true) ;
+  }
+
+  if (saci.getMode() == 3) {
+    client.publish("mode", "cool mode", true) ;
+  }
 
   itoa(saci.getControlStep(), msg, 10);
   client.publish("step", msg, true) ;
 
-  itoa(saci.getProfileRun(), msg, 10);
-  client.publish("profile", msg, true) ;
+  if (saci.getProfileRun() == 1 ) {
+    client.publish("profile", "Running", true) ;
+    itoa(saci.getControlStep(), msg, 10);
+    client.publish("step", msg, true) ;
+  }
+  else {
+    client.publish("profile", "off", true) ;
+    client.publish("step", "-", true) ;
+  }
 
+  itoa((millis() / 1000), msg, 10);
+  client.publish("uptime", msg, true) ;
 }
 
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
@@ -50,13 +80,43 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
    }
    saci.setConfig("targetTemp", _value ) ;
   }
+
+  if (strcmp(topic, "setMode") == 0) {
+    String _value = "";
+    for (int i = 0; i < length; i++) {
+     _value += (char)payload[i] ;
+   }
+
+   if (_value == "off") {
+    saci.setConfig("mode", "OFF" ) ;
+   }
+
+   if (_value == "auto") {
+    saci.setConfig("mode", "Automatic" ) ;
+   }
+
+   if (_value == "heat") {
+    saci.setConfig("mode", "Heating" ) ;
+   }
+
+   if (_value == "cool") {
+    saci.setConfig("mode", "Cooling" ) ;
+   }
+ }
+
+  if (strcmp(topic, "setTargetTemp") == 0) {
+    String _value = "";
+    for (int i = 0; i < length; i++) {
+     _value += (char)payload[i] ;
+   }
+   saci.setConfig("targetTemp", _value ) ;
+  }
+
   saci.writeConfig() ;
   mqttPublish() ;
 }
 
 void mqttReconnect() {
-  //quick and dirty hack to generate mqtt-ID
-  // Space is not a problem on ESP8266 after all ;)
   String ID = "saci-" ;
          ID += ESP.getChipId() ;
 
@@ -66,6 +126,7 @@ void mqttReconnect() {
   if (!client.connected()) {
     client.connect(mqttId, mqttUser, mqttPass);
     client.subscribe("setTargetTemp");
+    client.subscribe("setMode");
     mqttPublish() ;
   }
 }
