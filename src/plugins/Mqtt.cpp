@@ -55,7 +55,9 @@ void mqttPublish() {
     client.publish("mode", "cool mode", true) ;
   }
 
-  itoa(saci.getControlStep(), msg, 10);
+  //Human readable step
+  //We start counting for 1, not zero ;)
+  itoa((saci.getControlStep() + 1), msg, 10);
   client.publish("step", msg, true) ;
 
   if (saci.getProfileRun() == 1 ) {
