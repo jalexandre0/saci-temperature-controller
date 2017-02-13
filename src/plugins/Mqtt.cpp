@@ -32,11 +32,11 @@ void mqttPublish() {
   }
 
   if (saci.getStatus() == 1) {
-    client.publish("status", "cooling", true) ;
+    client.publish("status", "heating", true) ;
   }
 
   if (saci.getStatus() == 2) {
-    client.publish("status", "heating", true) ;
+    client.publish("status", "cooling", true) ;
   }
 
   if (saci.getMode() == 0) {
@@ -55,14 +55,9 @@ void mqttPublish() {
     client.publish("mode", "cool mode", true) ;
   }
 
-  //Human readable step
-  //We start counting for 1, not zero ;)
-  itoa((saci.getControlStep() + 1), msg, 10);
-  client.publish("step", msg, true) ;
-
   if (saci.getProfileRun() == 1 ) {
     client.publish("profile", "Running", true) ;
-    itoa(saci.getControlStep(), msg, 10);
+    itoa((saci.getControlStep() + 1), msg, 10);
     client.publish("step", msg, true) ;
   }
   else {
