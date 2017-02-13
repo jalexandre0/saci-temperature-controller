@@ -101,16 +101,8 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
    }
  }
 
-  if (strcmp(topic, "setTargetTemp") == 0) {
-    String _value = "";
-    for (int i = 0; i < length; i++) {
-     _value += (char)payload[i] ;
-   }
-   saci.setConfig("targetTemp", _value ) ;
-  }
-
-  saci.writeConfig() ;
-  mqttPublish() ;
+ saci.writeConfig() ;
+ mqttPublish() ;
 }
 
 void mqttReconnect() {
