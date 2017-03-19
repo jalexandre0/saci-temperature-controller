@@ -99,8 +99,9 @@ framework = arduino
 board = nodemcuv2
 build_flags = -Wl,-Tesp8266.flash.4m1m.ld
 board_f_cpu = 160000000L
-#Change if you are on windows, Mac or using OTA
-upload_port = /dev/ttyUSB0 #Linux
+#Platform.io seems to auto detect port in some systems. 
+#if not, specify your com port. 
+#upload_port = /dev/ttyUSB0
 lib_deps =
   OneWire
   DallasTemperature
