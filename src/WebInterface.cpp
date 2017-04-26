@@ -37,6 +37,24 @@ void config() {
   else {
     //Pass the values of argument array one by one to BangController::setConfig
     for (uint8_t i=0 ; i <= interface.args() ; i++ ) {
+      if (interface.argName(i) == "heat" && saci.getMode() == 4) {
+          if ( interface.arg(i) == "1" ) {
+            saci.heat(true);
+          }
+          if ( interface.arg(i) == "0" ) {
+            saci.heat(false);
+          }
+      }
+
+      if (interface.argName(i) == "cool" && saci.getMode() == 4) {
+        if ( interface.arg(i) == "1" ) {
+          saci.cool(true);
+        }
+        if ( interface.arg(i) == "0" ) {
+          saci.cool(false);
+        }
+      }
+
       if (interface.arg(i).length() > 0 ) {
         saci.setConfig(interface.argName(i), interface.arg(i)) ;
       }

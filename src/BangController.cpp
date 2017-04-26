@@ -183,6 +183,11 @@ void BangController::run() {
       return ;
     }
   }
+//Testing an external script to drive SACI, bypassing internal logic
+// HIGHLY EXPERIMENTAL. :)
+  if (mode == 4) {
+    return ;
+  }
 }
 
 //Adjust individual configs
@@ -204,7 +209,12 @@ void BangController::setConfig(String _key, String _value)  {
     if (_value == "Cooling") {
       mode = 3;
     }
+
+    if (_value == "Slave-EXPERIMENTAL") {
+      mode = 4;
+    }
   }
+
 
   if (_key == "heatTimer") {
    heatTimer = _value.toInt() ;
