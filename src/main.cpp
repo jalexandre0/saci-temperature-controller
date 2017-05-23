@@ -17,7 +17,7 @@
 uint8_t heatPin = D7 ;
 uint8_t coolPin = D8 ;
 //Pins, config and profile path
-BangController saci(heatPin, coolPin, "/saci.txt", "saciprofile.txt");
+BangController saci(coolPin, heatPin, "/saci.txt", "saciprofile.txt");
 
 //NTP  for profile
 WiFiUDP udpSocket;
